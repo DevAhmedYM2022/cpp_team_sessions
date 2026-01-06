@@ -1,0 +1,51 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "windows-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/../build/${presetName}",
+      "installDir": "${sourceDir}/../install/${presetName}",
+      "cacheVariables": {        
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_TOOLCHAIN_FILE": "Z:/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_INSTALLED_DIR": "Z:/cuda_12_instance/installed",
+        "VCPKG_TARGET_TRIPLET": "x64-windows"
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "x64-Debug",
+      "displayName": "x64-Debug",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "x64-RelWithDebInfo",
+      "displayName": "x64-RelWithDebInfo",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "x64-Release",
+      "displayName": "x64-Release",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
+}
