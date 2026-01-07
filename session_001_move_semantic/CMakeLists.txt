@@ -1,6 +1,9 @@
 set(EXAMPLES_LIST
     ex_001_01_the_problem 98
-    ex_001_02_move_constructor 23
+    ex_001_02_lvalue_rvalue 23
+    ex_001_03_move_constructor 23
+    ex_001_04_perfect_forward 23
+    ex_001_05_stl_move_aware 23
 )
 
 list(LENGTH EXAMPLES_LIST LEN)
@@ -19,4 +22,5 @@ foreach(I RANGE 0 ${NUM_EXAMPLES})
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS OFF
     )
+    target_compile_options(${TARGET_NAME} PRIVATE /Zc:__cplusplus)
 endforeach()

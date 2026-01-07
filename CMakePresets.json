@@ -8,10 +8,7 @@
       "binaryDir": "${sourceDir}/../build/${presetName}",
       "installDir": "${sourceDir}/../install/${presetName}",
       "cacheVariables": {        
-        "CMAKE_CXX_COMPILER": "cl.exe",
-        "CMAKE_TOOLCHAIN_FILE": "Z:/scripts/buildsystems/vcpkg.cmake",
-        "VCPKG_INSTALLED_DIR": "Z:/cuda_12_instance/installed",
-        "VCPKG_TARGET_TRIPLET": "x64-windows"
+        "CMAKE_CXX_COMPILER": "cl.exe"
       },
       "architecture": {
         "value": "x64",
